@@ -25,7 +25,7 @@
 				<div class="clear"></div>
 			  </g:each>
 			</div>
-			<div id="main_content_bottom">			
+			<div id="main_content_bottom">
 			</div>
 		</div>				
 		

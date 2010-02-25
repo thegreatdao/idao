@@ -9,9 +9,7 @@
   <title>Post List</title>
 </head>
 <body>
-<div class="grid_9" id="main_form_content">
-	<g:applyLayout name="../common/form/pane" template="../category/category_form"/>
+	<g:applyLayout name="../common/emptybody" template="../category/category_form"/>
 	<g:renderRightSideBar/>
-</div>
 </body>
 </html>
