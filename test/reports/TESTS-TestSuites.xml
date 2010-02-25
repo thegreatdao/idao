@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<testsuites>
+  <testsuite errors="0" failures="0" hostname="hli" id="0" name="CategoryTests" package="com.i" tests="1" time="1.797" timestamp="2009-12-04T16:09:42">
+      <properties />
+
+      <testcase classname="com.i.CategoryTests" name="testCategory" time="1.719" />
+
+      <system-out><![CDATA[--Output from testCategory--
+iching]]></system-out>
+
+      <system-err><![CDATA[--Output from testCategory--
+]]></system-err>
+
+  </testsuite>
+  <testsuite errors="0" failures="0" hostname="hli" id="1" name="MappingRelationshipsTests" package="com.i" tests="1" time="0.015" timestamp="2009-12-04T16:09:44">
+      <properties />
+
+      <testcase classname="com.i.MappingRelationshipsTests" name="testPostWithTags" time="0.015" />
+
+      <system-out><![CDATA[--Output from testPostWithTags--
+]]></system-out>
+
+      <system-err><![CDATA[--Output from testPostWithTags--
+]]></system-err>
+
+  </testsuite>
+  <testsuite errors="0" failures="0" hostname="hli" id="2" name="PostTests" package="com.i" tests="1" time="0.281" timestamp="2009-12-04T16:09:44">
+      <properties />
+
+      <testcase classname="com.i.PostTests" name="testSavePost" time="0.265" />
+
+      <system-out><![CDATA[--Output from testSavePost--
+User for joe (2)
+com.i.Category : 2
+]]></system-out>
+
+      <system-err><![CDATA[--Output from testSavePost--
+]]></system-err>
+
+  </testsuite>
+  <testsuite errors="0" failures="0" hostname="hli" id="3" name="QueryIntegrationTests" package="com.i" tests="3" time="0.704" timestamp="2009-12-04T16:09:44">
+      <properties />
+
+      <testcase classname="com.i.QueryIntegrationTests" name="testBasicDynamicFinder" time="0.141" />
+
+      <testcase classname="com.i.QueryIntegrationTests" name="testFetching" time="0.281" />
+
+      <testcase classname="com.i.QueryIntegrationTests" name="testQBE" time="0.266" />
+
+      <system-out><![CDATA[--Output from testBasicDynamicFinder--
+--Output from testFetching--
+--Output from testQBE--
+]]></system-out>
+
+      <system-err><![CDATA[--Output from testBasicDynamicFinder--
+--Output from testFetching--
+--Output from testQBE--
+]]></system-err>
+
+  </testsuite>
+  <testsuite errors="0" failures="0" hostname="hli" id="4" name="UserTests" package="com.i" tests="1" time="0.047" timestamp="2009-12-04T16:09:45">
+      <properties />
+
+      <testcase classname="com.i.UserTests" name="testCRUDUser" time="0.047" />
+
+      <system-out><![CDATA[--Output from testCRUDUser--
+Fri Dec 04 11:09:45 EST 2009]]></system-out>
+
+      <system-err><![CDATA[--Output from testCRUDUser--
+]]></system-err>
+
+  </testsuite>
+</testsuites>

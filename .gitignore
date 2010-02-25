@@ -1,0 +1,12 @@
+*.rar
+i.*
+*.logi-*.iml
+i-*.launch
+*.log
+web-app/images.setting/
+*.imp
+java.*
+jquery*
+i*.iml
+.settings/
+web-app/images/
