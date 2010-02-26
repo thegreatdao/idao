@@ -8,14 +8,16 @@ class SearchableController
 
     def index =
 	{
+		println '----------------------------------------------------------------------------------------------------'
         if (!params.q?.trim())
 		{
             return [:]
         }
         try
 		{
-			def searchResult = Post.search(params.q, params)
-            return [searchResult: searchResult]
+			def postInstances = Post.search(params.q, params)
+			postInstances.each{println postInstances.getClass()}			
+            return [postInstances: postInstances]
         }
 		catch (SearchEngineQueryParseException ex)
 		{
@@ -25,6 +27,7 @@ class SearchableController
 	
 	def getSearchSuggestion =
 	{
+		println '----------------------------------------------------------------------------------------------------'
 		def result
         if (!params.q?.trim())
 		{
@@ -32,8 +35,8 @@ class SearchableController
         }
         try
 		{
-			def searchResult = Post.search(params.q, [suggestQuery:true])
-            result = !searchResult.suggestedQuery?'':searchResult.suggestedQuery
+			def postInstances = Post.search(params.q, [suggestQuery:true])
+            result = !postInstances.suggestedQuery?'':postInstances.suggestedQuery
         }
 		catch (SearchEngineQueryParseException ex)
 		{

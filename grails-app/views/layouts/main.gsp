@@ -287,7 +287,7 @@
 				</div>
 				<div id="search">
 					<g:form controller="searchable"  method="get" name="searchable">
-						<input type="text" name="q"/>
+						<input type="text" name="q" value="${params.q}"/>
 						<input type="button" value="<g:message code="search"/>"/>
 					</g:form>
 				</div>

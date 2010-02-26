@@ -40,11 +40,19 @@ class RendererTagLib
     out << render (template:'/post/rating', model:[postInstance : postInstance])
   }
 
-  def renderSearchItem =
+  /*
+  def renderItems =
   {
-    attrs , body ->
-    def searchItem = attrs.searchItem
-    out << render (template:'/common/emptybody', model : [searchItem : searchItem])
+    attrs, body ->
+    def items = attrs.items
+    out << render (template:'/common/emptybody', model : [items : items])
   }
   
+  def renderPostItems =
+  {
+	attrs, body ->
+	def postInstances = attrs.postInstances
+	out << render (template:'/common/emptybody', model : [postInstances : postInstances])
+  }
+  */
 }

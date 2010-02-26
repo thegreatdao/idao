@@ -21,7 +21,6 @@ import grails.converters.JSON
 class CommentableController
 {
   def add = {
-	println 'add comment-----------------------------------------------------------------------------'
     def poster = evaluatePoster()
     def commentLink
     try {

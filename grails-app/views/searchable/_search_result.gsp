@@ -1,3 +1,7 @@
+<%@ page import="org.springframework.util.ClassUtils" %>
+<%@ page import="org.codehaus.groovy.grails.plugins.searchable.SearchableUtils" %>
+<%@ page import="org.codehaus.groovy.grails.plugins.searchable.lucene.LuceneUtils" %>
+<%@ page import="org.codehaus.groovy.grails.plugins.searchable.util.StringQueryUtils" %>
 <g:set var="haveQuery" value="${params.q?.trim()}" />
   <g:set var="haveResults" value="${searchResult?.results}" />
   <div class="title">

@@ -9,7 +9,7 @@
   <title>Post List</title>
 </head>
 <body>
-	<g:applyLayout name="../common/emptybody" template="../category/category_form"/>
+	<g:applyLayout name="../common/emptybody" template="../searchable/search_result"/>
 	<g:renderRightSideBar/>
 </body>
 </html>
