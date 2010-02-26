@@ -20,9 +20,8 @@ import grails.converters.JSON
 
 class CommentableController
 {
-
-
   def add = {
+	println 'add comment-----------------------------------------------------------------------------'
     def poster = evaluatePoster()
     def commentLink
     try {
@@ -60,10 +59,6 @@ class CommentableController
       cache true
     }
     if(request.xhr || params.async) {
-      /*
-      def result = [comment:comment, user:comment.poster]
-      render result as JSON
-      */
       render (template:'/post/comment', model:[comment:comment])
     }
     else {
