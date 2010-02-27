@@ -8,7 +8,7 @@ class Post implements Commentable, Rateable
 	//enable this we have to use merge instead of save on domain class a bug from searchable plugin
 	static searchable = 
 	{
-		except = ['imageURL']
+		//except = ['imageURL']
 		title boost: 2.0
 		title spellCheck: 'include'
 	}

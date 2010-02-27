@@ -44,7 +44,7 @@
 				{
                   $('#body').htmlarea();
 					$("input[name='q']").autocomplete(
-						'${request.contextPath}/searchable/getSearchSuggestion',
+						'${request.contextPath}/search/getSearchSuggestion',
 						{
 							width: 206
 						}
@@ -286,7 +286,7 @@
 					<div class="menu_item"><a href="javascript:void(0);"><g:message code="Contact"/></a></div>
 				</div>
 				<div id="search">
-					<g:form controller="searchable"  method="get" name="searchable">
+					<g:form controller="search"  method="get" name="searchable">
 						<input type="text" name="q" value="${params.q}"/>
 						<input type="button" value="<g:message code="search"/>"/>
 					</g:form>
