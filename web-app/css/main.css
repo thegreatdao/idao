@@ -347,6 +347,7 @@ img#login_button
 .item .previewImg
 {
 	margin-top:10px;
+	cursor:pointer;
 }
 
 .summary

@@ -22,6 +22,7 @@
 		<script type="text/javascript" src="${resource(dir:'js',file:'ui.accordion.js')}"></script>
 		<script type="text/javascript" src="${resource(dir:'js',file:'swfobject.js')}"></script>
 		<script type="text/javascript" src="${resource(dir:'js',file:'jquery.watermark.min.js')}"></script>
+		<script type="text/javascript" src="${resource(dir:'js',file:'jquery.autogrow.js')}"></script>
 		<script type="text/javascript" src="${resource(dir:'js',file:'jquery.text-overflow.min.js')}"></script>
 		<script type="text/javascript" src="${resource(dir:'js',file:'jquery.autocomplete.min.js')}"></script>
         <script type="text/javascript" src="${resource(dir:'js',file:'jHtmlArea-0.7.0.min.js')}"></script>
@@ -42,6 +43,7 @@
 			$(
 				function()
 				{
+				  $('.comment textarea').autogrow();
                   $('#body').htmlarea();
 					$("input[name='q']").autocomplete(
 						'${request.contextPath}/search/getSearchSuggestion',
@@ -165,7 +167,7 @@
 					$('.menu_item').each(
 						function()
 						{							
-							var tab = $(this).children('a')[0].childNodes[0].data;
+							var tab = $(this).attr('id').substring(4);
 							if(currentTab.length != 0)
 							{
 								if(currentTab == tab)
@@ -238,7 +240,7 @@
 					$('div#footer ul li').each(
 						function()
 						{
-							var tab = $(this).children('a')[0].childNodes[0].data;							
+							var tab = $(this).attr('id').substring(10);							
 							if(currentTab == tab)
 							{
 								$(this).children('a')[0].className = "reverse";
@@ -273,14 +275,14 @@
 				<a href="${resource(dir:'')}"><img src="${resource(dir: 'img', file: 'logo.png')}" id="logo" title="<g:message code='logo'/>"/></a>
 				<div id="language">
 					<a href="javascript:void(0);"><img src="${resource(dir: 'img', file: 'cn.png')}" title="<g:message code="simplified.chinese"/>"/></a>
-					<a href="javascript:void(0);"><img src="${resource(dir: 'img', file: 'hk.png')}" title="<g:message code="traditional.chinese"/>"/></a>
+					<!--<a href="javascript:void(0);"><img src="${resource(dir: 'img', file: 'hk.png')}" title="<g:message code="traditional.chinese"/>"/></a>-->
 					<a href="javascript:void(0);"><img src="${resource(dir: 'img', file: 'us.png')}" title="English"/></a>
 				</div>
 				<div id="menu">
-					<div class="menu_item"><a href="${resource(dir:'')}"><g:message code="Home"/></a></div>
-					<div class="menu_item"><a href="javascript:void(0);"><g:message code="I-Ching"/></a></div>
-					<div class="menu_item"><a href="javascript:void(0);"><g:message code="Dao"/></a></div>
-					<div class="menu_item"><a href="javascript:void(0);"><g:message code="Zen-Buddhaism"/></a></div>
+					<div class="menu_item" id="menu0"><a href="${resource(dir:'')}"><g:message code="Home"/></a></div>
+					<div class="menu_item" id="menu1"><a href="<g:createLink controller="post" action="list" params="[category: 1]"/>"><g:message code="I-Ching"/></a></div>
+					<div class="menu_item" id="menu2"><a href="<g:createLink controller="post" action="list" params="[category: 2]"/>"><g:message code="Dao"/></a></div>
+					<div class="menu_item" id="menu3"><a href="<g:createLink controller="post" action="list" params="[category: 3]"/>"><g:message code="Zen-Buddhaism"/></a></div>
 					<div class="menu_item"><a href="javascript:void(0);"><g:message code="Cast-I-Ching"/></a></div>
 					<div class="menu_item"><a href="javascript:void(0);"><g:message code="About"/></a></div>
 					<div class="menu_item"><a href="javascript:void(0);"><g:message code="Contact"/></a></div>
@@ -300,10 +302,10 @@
 			<div class="grid_12" id="footer">
 					<img src="${resource(dir: 'img', file: 'buddist_lotus.png')}" title="<g:message code="mind.is.Buddha"/>"/>
 					<ul>
-						<li><a href="${resource(dir:'')}"><g:message code="Home"/></a></li>
-						<li><a href="javascript:void(0);"><g:message code="I-Ching"/></a></li>
-						<li><a href="javascript:void(0);"><g:message code="Dao"/></a></li>
-						<li><a href="javascript:void(0);"><g:message code="Zen-Buddhaism"/></a></li>
+						<li id="bottomMenu0"><a href="${resource(dir:'')}"><g:message code="Home"/></a></li>
+						<li id="bottomMenu1"><a href="<g:createLink controller="post" action="list" params="[category: 1]"/>"><g:message code="I-Ching"/></a></li>
+						<li id="bottomMenu2"><a href="<g:createLink controller="post" action="list" params="[category: 2]"/>"><g:message code="Dao"/></a></li>
+						<li id="bottomMenu3"><a href="<g:createLink controller="post" action="list" params="[category: 3]"/>"><g:message code="Zen-Buddhaism"/></a></li>
 						<li><a href="javascript:void(0);"><g:message code="Cast-I-Ching"/></a></li>
 						<li><a href="javascript:void(0);"><g:message code="About"/></a></li>
 						<li><a href="javascript:void(0);"><g:message code="Contact"/></a></li>

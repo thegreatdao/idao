@@ -14,7 +14,7 @@ class MainController
 		def iChingPosts = Post.findAllByCategory(Category.get(1), [max:5] )
 		def daoDeJingPosts = Post.findAllByCategory(Category.get(2), [max:5])
 		def zenBuPosts = Post.findAllByCategory(Category.get(3), [max:5])
-		request.category = 'Home'
+		request.category = 0
 		render (view:'index', model:[title:title, postInstances:postInstances, iChingPosts:iChingPosts, daoDeJingPosts:daoDeJingPosts, zenBuPosts:zenBuPosts])
 	}
 }

@@ -1,7 +1,7 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
-        <title>${title}${request.category}</title>
+        <title>${title}</title>
 		<meta name="layout" content="main" />
         <link rel="stylesheet" href="${resource(dir:'css',file:'jquery.rating.css')}"/>      
         <script type="text/javascript" src="${resource(dir:'js',file:'jquery.rating.js')}"></script>      

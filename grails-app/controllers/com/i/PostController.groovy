@@ -23,7 +23,7 @@ class PostController
       def category = Category.get(params.category)
 	  if(category)
 	  {
-		request.category = category.name
+		request.category = category.id
 		}
       postInstanceList = Post.findAllByCategory(category, [params])
     }
@@ -37,7 +37,7 @@ class PostController
   def show =
   {
     def postInstance = Post.get( params.id )
-	request.category = postInstance.category.name
+	request.category = postInstance.category.id
     if(!postInstance)
     {
       flash.message = "Post not found with id ${params.id}"
@@ -91,7 +91,6 @@ class PostController
     request.title = 'Post Update'
     request.isEdit = true
     def postInstance = Post.get( params.id )
-
     if(!postInstance)
     {
       flash.message = "User not found with id ${params.id}"
