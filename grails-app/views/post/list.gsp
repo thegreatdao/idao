@@ -113,6 +113,7 @@
 				</g:each>
 			</div>
 		</div>
+          
 		<g:renderRightSideBar/>
     </body>
 </html>

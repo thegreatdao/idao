@@ -4,8 +4,6 @@ import org.compass.core.engine.SearchEngineQueryParseException
 
 class SearchController
 {
-	def searchableService
-
     def index =
 	{
         try
@@ -13,7 +11,7 @@ class SearchController
 			def postInstances = Post.search(params.q, params)
             if(postInstances.results.size() != 0)
             {
-              return [postInstances: postInstances.results]
+              return [postInstances: postInstances.results, searchResult : postInstances]
             }
             else
             {

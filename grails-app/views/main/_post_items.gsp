@@ -1,3 +1,4 @@
+<%@ page import="com.i.Post" %>
 <g:each var="postInstance" in="${postInstances}">
 	<div class="item">
 		<a href="<g:createLink controller="post" action="show" id="${postInstance.id}"/>">
