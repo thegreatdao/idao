@@ -43,9 +43,7 @@
 			$(
 				function()
 				{
-				  var hongli2 = $('#hongli > ins').html();
-				  $('#hongli2').html(hongli2);
-				  $('.comment textarea').autogrow();
+				  //$('.comment textarea').autogrow();
                   $('#body').htmlarea();
 					$("input[name='q']").autocomplete(
 						'${request.contextPath}/search/getSearchSuggestion',
@@ -163,12 +161,12 @@
 							position: logoPosition,
 							style: style
 						}
-					);		
-					
+					);
+
 					var currentTab = "${request.category}";
 					$('.menu_item').each(
 						function()
-						{							
+						{
 							var tab = $(this).attr('id').substring(4);
 							if(currentTab.length != 0)
 							{
@@ -179,7 +177,7 @@
 							}
 						}
 					);
-					
+
 					$('.menu_item').mouseover(
 						function()
 						{
@@ -219,7 +217,7 @@
 
                     $('#previous').hover(
 					   function()
-					   {                             
+					   {
 						   $(this).attr('src','${request.contextPath}/img/previous_arrow_on.png');
 					   },
 					   function()
@@ -227,7 +225,7 @@
 						   $(this).attr('src','${request.contextPath}/img/previous_arrow.png');
 					   }
                     );
-					
+
                     $('#next').hover(
 					   function()
 					   {
@@ -238,11 +236,11 @@
 						   $(this).attr('src','${request.contextPath}/img/next_arrow.png');
 					   }
                     );
-					
+
 					$('div#footer ul li').each(
 						function()
 						{
-							var tab = $(this).attr('id').substring(10);							
+							var tab = $(this).attr('id').substring(10);
 							if(currentTab == tab)
 							{
 								$(this).children('a')[0].className = "reverse";
@@ -315,27 +313,11 @@
 					<img src="${resource(dir: 'img', file: 'buddist_lotus_reflective.png')}" title="<g:message code="mind.is.Buddha"/>" style="float:right;margin-right:6px;"/>
 					<div class="clear"></div>
 					<div id="copyright">
-					<div id="hongli">
-						<script type="text/javascript"><!--
-							google_ad_client = "pub-6137294612225547";
-							/* Search-Results 300x250, created 3/21/09 */
-							google_ad_slot = "4378588011";
-							google_ad_width = 300;
-							google_ad_height = 250;
-							//-->
-						</script>
-						<script type="text/javascript"
-						src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
-						</script>
-					</div>
-					<div id="hongli2">
-						
-					</div>
 						copyright &copy; 2009 i-dao.com
 					</div>
 			</div>
 			<div class="clear"></div>
 		</div>
-    
+
 	</body>
 </html>
