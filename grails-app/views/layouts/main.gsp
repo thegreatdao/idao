@@ -43,6 +43,8 @@
 			$(
 				function()
 				{
+				  var hongli2 = $('#hongli > ins').html();
+				  $('#hongli2').html(hongli2);
 				  $('.comment textarea').autogrow();
                   $('#body').htmlarea();
 					$("input[name='q']").autocomplete(
@@ -313,6 +315,22 @@
 					<img src="${resource(dir: 'img', file: 'buddist_lotus_reflective.png')}" title="<g:message code="mind.is.Buddha"/>" style="float:right;margin-right:6px;"/>
 					<div class="clear"></div>
 					<div id="copyright">
+					<div id="hongli">
+						<script type="text/javascript"><!--
+							google_ad_client = "pub-6137294612225547";
+							/* Search-Results 300x250, created 3/21/09 */
+							google_ad_slot = "4378588011";
+							google_ad_width = 300;
+							google_ad_height = 250;
+							//-->
+						</script>
+						<script type="text/javascript"
+						src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+						</script>
+					</div>
+					<div id="hongli2">
+						
+					</div>
 						copyright &copy; 2009 i-dao.com
 					</div>
 			</div>
