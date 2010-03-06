@@ -52,7 +52,7 @@
                           if($('#comment_body_'+commentContainerId).val()!=0 )
                           {
                             var params = $(this).parent().serialize();
-                            var action = "${request.contextPath}/commentable/add";
+                            var action = "${request.contextPath}/comment/add";
                             var commentContainer = $('#comment_' + commentContainerId);
                             var preloader = $('#comment_loader_'+commentContainerId);
                             preloader.show();
