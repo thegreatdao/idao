@@ -1,17 +1,9 @@
 import java.awt.Font
 import java.awt.Color
 
-import com.octo.captcha.service.multitype.GenericManageableCaptchaService
-import com.octo.captcha.engine.GenericCaptchaEngine
-import com.octo.captcha.image.gimpy.GimpyFactory
-import com.octo.captcha.component.word.wordgenerator.RandomWordGenerator
-import com.octo.captcha.component.image.wordtoimage.ComposedWordToImage
-import com.octo.captcha.component.image.fontgenerator.RandomFontGenerator
-import com.octo.captcha.component.image.backgroundgenerator.GradientBackgroundGenerator
-import com.octo.captcha.component.image.color.SingleColorGenerator
-import com.octo.captcha.component.image.textpaster.NonLinearTextPaster
 
-import com.octo.captcha.service.sound.DefaultManageableSoundCaptchaService
+
+
 
 grails.commentable.poster.evaluator = { getAuthUserDomain() }
 grails.rateable.rater.evaluator = { getAuthUserDomain() }
@@ -69,40 +61,7 @@ log4j = {
 
 //log4j.logger.org.springframework.security='off,stdout'
 
-jcaptchas {
-	image = new GenericManageableCaptchaService(
-		new GenericCaptchaEngine(
-			new GimpyFactory(
-				new RandomWordGenerator(
-					"abcdefghijklmnopqrstuvwxyz1234567890"
-				),
-				new ComposedWordToImage(
-					new RandomFontGenerator(
-						15, // min font size
-						25, // max font size
-						[new Font("Arial", 0, 10)] as Font[]
-					),
-					new GradientBackgroundGenerator(
-						120, // width
-						30, // height
-						new SingleColorGenerator(Color.black),
-						new SingleColorGenerator(Color.black)
-					),
-					new NonLinearTextPaster(
-						6, // minimal length of text
-						6, // maximal length of text
-						Color.white
-					)
-				)
-			)
-		),
-		180, // minGuarantedStorageDelayInSeconds
-		180000 // maxCaptchaStoreSize
-	)
-	
-	// Uncomment this to enable the sound captcha, you must install FreeTTS for it to work though.
-	//sound = new DefaultManageableSoundCaptchaService()
-}
+
 
 //i-dao related settings
 post.main.folder='C:/uploadedImg/post/'
