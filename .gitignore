@@ -16,5 +16,4 @@ web-app/plugins/
 .idea
 idao.*
 hook/
-src/java/
 target/
