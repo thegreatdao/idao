@@ -9,7 +9,6 @@ java.*
 i*.iml
 .settings/
 web-app/images/
-null/
 web-app/img/Thumbs.db
 web-app/img/gua/Thumbs.db
 web-app/plugins/
