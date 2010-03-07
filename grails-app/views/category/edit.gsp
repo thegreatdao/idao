@@ -47,22 +47,7 @@
                                 </td>
                             </tr> 
                         
-                            <tr class="prop">
-                                <td valign="top" class="name">
-                                    <label for="posts">Posts:</label>
-                                </td>
-                                <td valign="top" class="value ${hasErrors(bean:categoryInstance,field:'posts','errors')}">
-                                    
-<ul>
-<g:each var="p" in="${categoryInstance?.posts?}">
-    <li><g:link controller="post" action="show" id="${p.id}">${p?.encodeAsHTML()}</g:link></li>
-</g:each>
-</ul>
-<g:link controller="post" params="['category.id':categoryInstance?.id]" action="create">Add Post</g:link>
-
-                                </td>
-                            </tr> 
-                        
+                                                   
                         </tbody>
                     </table>
                 </div>

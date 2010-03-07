@@ -15,7 +15,7 @@
 		</li>
 		<li>
 			<label for="category">Category:</label>
-			<g:select optionKey="id" from="${com.i.Category.list()}" name="category.id" optionValue="name" value="${postInstance.category.id}"></g:select>
+			<g:select optionKey="id" from="${com.i.Category.list()}" name="category.id" optionValue="name" value="${postInstance?.category?.id}"></g:select>
 		</li>
 		<li>
 			<label for="body">Body:</label>

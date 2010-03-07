@@ -66,7 +66,8 @@ class CategoryController
 		}
 		else
 		{
-			return [ categoryInstance : categoryInstance ]
+			request.categoryInstance = categoryInstance
+			render(view:'category_form')			
 		}
 	}
 	

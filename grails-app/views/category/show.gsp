@@ -40,20 +40,7 @@
                             
                             <td valign="top" class="value">${fieldValue(bean:categoryInstance, field:'chineseName')}</td>
                             
-                        </tr>
-                    
-                        <tr class="prop">
-                            <td valign="top" class="name">Posts:</td>
-                            
-                            <td  valign="top" style="text-align:left;" class="value">
-                                <ul>
-                                <g:each var="p" in="${categoryInstance.posts}">
-                                    <li><g:link controller="post" action="show" id="${p.id}">${p?.encodeAsHTML()}</g:link></li>
-                                </g:each>
-                                </ul>
-                            </td>
-                            
-                        </tr>
+                        </tr>                                            
                     
                     </tbody>
                 </table>
