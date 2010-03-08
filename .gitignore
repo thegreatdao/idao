@@ -16,4 +16,5 @@ web-app/plugins/
 idao.*
 hook/
 target/
-web-app/WEB-INF/flex/
+web-app/WEB-INF/flex
+web-app/*.swf
