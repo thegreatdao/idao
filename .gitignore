@@ -22,3 +22,4 @@ web-app/AC_OETags.js
 web-app/history/
 grails-app/html-template/
 src/templates/artifacts/
+src/templates/scaffolding/
