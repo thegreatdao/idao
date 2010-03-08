@@ -102,7 +102,7 @@
 						$('#profile').css('color','#000000');
 					}
 
-					var so = new SWFObject("${resource(dir:'swf',file:'tagcloud.swf')}", "tagcloud", "240", "200", "7", "#ffffff");
+					var so = new SWFObject("${resource(dir:'',file:'tagcloud.swf')}", "tagcloud", "240", "200", "7", "#ffffff");
 					so.addParam("wmode", "transparent");
 					so.addVariable("tcolor", "0x333333");
 					so.addVariable("mode", "tags");

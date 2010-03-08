@@ -18,3 +18,6 @@ hook/
 target/
 web-app/WEB-INF/flex
 web-app/*.swf
+web-app/AC_OETags.js
+web-app/history/
+grails-app/html-template/
