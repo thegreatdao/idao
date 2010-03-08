@@ -23,3 +23,5 @@ web-app/history/
 grails-app/html-template/
 src/templates/artifacts/
 src/templates/scaffolding/
+grails-app/views/flex/org/
+grails-app/views/flex/com/i/*Base.as
