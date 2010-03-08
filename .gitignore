@@ -16,12 +16,13 @@ web-app/plugins/
 idao.*
 hook/
 target/
-web-app/WEB-INF/flex
 web-app/*.swf
 web-app/AC_OETags.js
-web-app/history/
 grails-app/html-template/
 src/templates/artifacts/
 src/templates/scaffolding/
 grails-app/views/flex/org/
 grails-app/views/flex/com/i/*Base.as
+web-app/history/*
+.gitignore~
+web-app/WEB-INF/flex/
