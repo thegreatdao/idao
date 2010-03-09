@@ -1,5 +1,6 @@
 *.rar
 i.*
+!i.mxml
 *.logi-*.iml
 i-*.launch
 *.log

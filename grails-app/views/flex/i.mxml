@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<mx:Application
+    xmlns:mx="http://www.adobe.com/2006/mxml"
+    xmlns:ui="org.granite.tide.uibuilder.*"
+	xmlns:maps="com.i.eventsmaps.*"
+    layout="absolute"
+    backgroundGradientColors="[#0e2e7d, #6479ab]"
+    preinitialize="Spring.getInstance().initApplication()">
+   
+   	<maps:MainEventMap/>
+   	
+    <mx:Script>
+        <![CDATA[
+        	import mx.controls.Alert;
+        	import mx.core.Container;
+        	import org.granite.tide.spring.Context;
+            import org.granite.tide.spring.Spring;
+            
+                	
+        ]]>
+    </mx:Script>
+	
+</mx:Application>
