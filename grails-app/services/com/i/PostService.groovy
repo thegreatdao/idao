@@ -1,9 +1,11 @@
 package com.i
+
 class PostException extends RuntimeException
 {
 	String message
 	Post post
 }
+
 class PostService 
 {
 
@@ -27,4 +29,9 @@ class PostService
 		}
 		throw new PostException(message: "Invalid User Id")
 	}
+
+    def list()
+    {
+      Post.list();
+    }
 }

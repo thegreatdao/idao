@@ -1,5 +1,8 @@
 package com.i
 
+import org.granite.tide.annotations.TideEnabled
+
+@TideEnabled
 class PostController
 {
   /**
@@ -7,6 +10,12 @@ class PostController
    */
   static{
     System.setProperty("com.sun.media.jai.disableMediaLib", "true");
+  }
+
+  List post
+  def flexPosts =
+  {
+    post = Post.list();
   }
 
   def burningImageService
