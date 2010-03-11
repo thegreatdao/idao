@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 
 <mx:Application
     xmlns:mx="http://www.adobe.com/2006/mxml"
@@ -6,7 +6,11 @@
 	xmlns:maps="com.i.eventsmaps.*"
     layout="absolute"
     backgroundGradientColors="[#0e2e7d, #6479ab]"
-    preinitialize="Spring.getInstance().initApplication()" width="640" height="800">
+    preinitialize="Spring.getInstance().initApplication()"
+	width="640"
+	height="800"
+	creationComplete="init()"
+	>
    
    	<!-- mate event map
    	<maps:MainEventMap/>
@@ -18,7 +22,7 @@
 	        import mx.collections.ArrayCollection;
 	        import org.granite.tide.spring.Spring;
 	        import org.granite.tide.events.TideResultEvent;
-			
+			import mx.controls.Alert;
 			[In]
 			public var postController:Object;
 			
@@ -26,6 +30,10 @@
 			[In]
 		    public var post:ArrayCollection;
 			
+			private function init():void
+			{
+				Alert.show('发财');
+			}
    		]]>
 	</mx:Script>
 	<mx:VBox verticalCenter="0" horizontalCenter="0" width="100%" height="100%">		
