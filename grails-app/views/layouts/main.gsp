@@ -314,6 +314,10 @@
 					<div class="clear"></div>
 					<div id="copyright">
 						copyright &copy; 2009 i-dao.com
+						<span style="color:#2e6ab1;">
+						Version <g:meta name="app.version"/>
+						on Grails <g:meta name="app.grails.version"/>
+						</span>
 					</div>
 			</div>
 			<div class="clear"></div>

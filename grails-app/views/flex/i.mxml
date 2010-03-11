@@ -6,13 +6,14 @@
 	xmlns:maps="com.i.eventsmaps.*"
     layout="absolute"
     backgroundGradientColors="[#0e2e7d, #6479ab]"
-    preinitialize="Spring.getInstance().initApplication()">
+    preinitialize="Spring.getInstance().initApplication()" width="640" height="800">
    
+   	<!-- mate event map
    	<maps:MainEventMap/>
+   	-->
    	
    <mx:Script>
    		<![CDATA[
-	   		import mx.controls.Alert;
 	   
 	        import mx.collections.ArrayCollection;
 	        import org.granite.tide.spring.Spring;
@@ -27,13 +28,8 @@
 			
    		]]>
 	</mx:Script>
-	<mx:VBox verticalCenter="0" horizontalCenter="0" width="440" height="512">		
-		<mx:Button label="List people" click="postController.list()"/>
-		<mx:DataGrid dataProvider="{post}">
-			<mx:columns>
-				<mx:DataGridColumn dataField="title"/>
-			</mx:columns>
-		</mx:DataGrid>
+	<mx:VBox verticalCenter="0" horizontalCenter="0" width="100%" height="100%">		
+		
 	</mx:VBox>
 	
 </mx:Application>
