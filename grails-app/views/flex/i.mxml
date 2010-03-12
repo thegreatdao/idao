@@ -5,14 +5,14 @@
     xmlns:ui="org.granite.tide.uibuilder.*"
 	xmlns:maps="com.i.eventsmaps.*"
     layout="absolute"
-    backgroundGradientColors="[#0e2e7d, #6479ab]"
+    backgroundColor="#ffffff"
+    backgroundAlpha="0"
     preinitialize="Spring.getInstance().initApplication()"
-	width="640"
-	height="800"
-	creationComplete="init()"
-	>
-   
+	width="660"
+	height="560"
+	creationComplete="init()">
    	<!-- mate event map
+    <mx:Style source="style/style.css"/>
    	<maps:MainEventMap/>
    	-->
    	
@@ -32,12 +32,61 @@
 			
 			private function init():void
 			{
-				Alert.show('发财');
+				//Alert.show('发财');
 			}
    		]]>
 	</mx:Script>
-	<mx:VBox verticalCenter="0" horizontalCenter="0" width="100%" height="100%">		
-		
-	</mx:VBox>
 	
+	<mx:Panel
+		title="Your fate is in my hand!"
+		height="100%"
+		width="100%" 
+		paddingTop="10"
+		paddingLeft="10" 
+		paddingRight="10"
+		paddingBottom="10" 
+		horizontalCenter="0"
+		verticalCenter="0" 
+		borderColor="#000000"
+		borderAlpha="0.6"
+		color="#FEB729"		
+		fontSize="12"
+		fontWeight="bold">
+
+        <mx:TabNavigator id="tn"  width="100%" height="100%" borderStyle="none">
+            <mx:VBox label="Cast I Ching">
+            	<mx:Accordion 
+            		id="accordion" 
+            		width="20%" 
+            		height="50%"
+            		borderStyle="none">
+		            <mx:VBox label="乾宫">
+		                <mx:Label text="乾宫"/>
+		            </mx:VBox>
+		
+		            <mx:VBox label="震宫">
+		                <mx:Label text="震宫"/>
+		            </mx:VBox>
+		
+		            <mx:VBox label="坤宫">
+		                <mx:Label text="坤宫"/>
+		            </mx:VBox>
+		            <mx:VBox label="乾宫">
+		                <mx:Label text="乾宫"/>
+		            </mx:VBox>
+		
+		            <mx:VBox label="震宫">
+		                <mx:Label text="震宫"/>
+		            </mx:VBox>
+		
+		            <mx:VBox label="坤宫">
+		                <mx:Label text="坤宫"/>
+		            </mx:VBox>
+		        </mx:Accordion>
+            </mx:VBox>
+
+            <mx:VBox label="I Ching Reference">
+            </mx:VBox>
+        </mx:TabNavigator>
+	</mx:Panel>
 </mx:Application>
