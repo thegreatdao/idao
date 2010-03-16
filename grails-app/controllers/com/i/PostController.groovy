@@ -40,6 +40,7 @@ class PostController
     {
       postInstanceList =  Post.list( params )
     }
+	post = postInstanceList
     request.postInstanceList = postInstanceList	
   }
 
