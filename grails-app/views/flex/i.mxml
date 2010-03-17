@@ -7,10 +7,10 @@
     layout="absolute"
     backgroundColor="#ffffff"
     backgroundAlpha="0"
-    preinitialize="Spring.getInstance().initApplication()"
+    preinitialize="preInit();"
 	width="660"
 	height="560"
-	creationComplete="init()">
+	>
 	
    	<!-- mate event map
     <mx:Style source="style/style.css"/>
@@ -18,171 +18,58 @@
    	-->
     <mx:Style source="xan.css"/>
     
-    <!--
-        <mx:Model id="mystates">
-	      <states>
-	        <state label="Alabama" data="AL"/>
-	        <state label="Alaska" data="AK"/>
-	        <state label="Arizona" data="AZ"/>
-	        <state label="Arkansas" data="AR"/>
-	        <state label="California" data="CA"/>
-	        <state label="Colorado" data="CO"/>
-	        <state label="Connecticut" data="CT"/>
-	        <state label="China" data="CN"/>
-	      </states>
-	    </mx:Model>
-	-->
-   <mx:Script>
+	<mx:Script>
    		<![CDATA[
    			import mx.collections.XMLListCollection;
-   			import mx.events.TreeEvent;
-	   
+   			import mx.events.TreeEvent;	   
 	        import mx.collections.ArrayCollection;
 	        import org.granite.tide.spring.Spring;
 	        import org.granite.tide.events.TideResultEvent;
 			import mx.events.ListEvent;
 			import mx.controls.Alert;
+			import org.granite.tide.spring.Context;
+			import org.granite.tide.events.TideResultEvent;
+			import com.i.Post;
 			
+			private var dummyPost:Post;
+			private var tideContext:Context = Spring.getInstance().getSpringContext();
+			[Bindable]
+			public var posts:ArrayCollection = new ArrayCollection();
+			private function listPosts():void 
+			{
+				tideContext.postService.list(listResult);
+			}
+
+			private function listResult(event:TideResultEvent):void
+			{ 
+				posts = event.result as ArrayCollection;
+			}
 			
-import mx.controls.treeClasses.TreeItemRenderer;
-
-
-
-  import mx.controls.listClasses.IListItemRenderer;
-
-  import mx.controls.treeClasses.TreeListData;
-
-  import mx.controls.Tree;
-
-  import mx.events.ListEvent;
-
-	import org.granite.tide.spring.Context;
-    import org.granite.tide.events.TideResultEvent;
-	import com.i.Post;
-	private var dummyPost:Post;
-	private var tideContext:Context = Spring.getInstance().getSpringContext();
-	 [Bindable] public var people:ArrayCollection = new ArrayCollection();
-	private function listPeople():void { tideContext.postService.list(listResult); Alert.show(people.length.toString());}
-
-	private function listResult(event:TideResultEvent):void
-	{ 
-		people = event.result as ArrayCollection;
-	}
-    private function init():void
-    {    	
-    	//listPeople();
-    	//Alert.show(people.length.toString());
-    }                                                                                                                                                  
-   		]]>
+			private function preInit():void
+			{    	
+				Spring.getInstance().initApplication();
+				listPosts();
+			}                                                                                                                                                  
+		]]>
 	</mx:Script>
-	
+			
 	<mx:Style>
-		Button
-		{
-		   cornerRadius: 0;
-		   paddingLeft: 2;
-		   highlightAlphas: 0, 0;
-		   themeColor: #cccccc;
-		}
-	</mx:Style>
-	
-	   <mx:XMLList id="treeData">
-		    <node label="64卦">
-		        <node label="乾宫">
-		            <node label="乾"/>
-		            <node label="姤"/>
-		            <node label="雷"/>
-		            <node label="乾"/>
-		            <node label="姤"/>
-		            <node label="乾"/>
-		            <node label="姤"/>
-		            <node label="雷"/>
-		        </node>
-		        <node label="坤宫">
-					<node label="乾"/>
-		            <node label="姤"/>
-		            <node label="雷"/>
-		            <node label="乾"/>
-		            <node label="姤"/>
-		            <node label="乾"/>
-		            <node label="姤"/>
-		            <node label="雷"/>
-		        </node>
-		        <node label="乾宫">
-					<node label="乾"/>
-		            <node label="姤"/>
-		            <node label="雷"/>
-		            <node label="乾"/>
-		            <node label="姤"/>
-		            <node label="乾"/>
-		            <node label="姤"/>
-		            <node label="雷"/>
-		        </node>
-		        <node label="坤宫">
-		            <node label="乾"/>
-		            <node label="姤"/>
-		            <node label="雷"/>
-		            <node label="乾"/>
-		            <node label="姤"/>
-		            <node label="乾"/>
-		            <node label="姤"/>
-		            <node label="雷"/>
-		        </node>
-		        <node label="乾宫">
-		            <node label="乾"/>
-		            <node label="姤"/>
-		            <node label="雷"/>
-		            <node label="乾"/>
-		            <node label="姤"/>
-		            <node label="乾"/>
-		            <node label="姤"/>
-		            <node label="雷"/>
-		        </node>
-		        <node label="坤宫">
-		            <node label="乾"/>
-		            <node label="姤"/>
-		            <node label="雷"/>
-		            <node label="乾"/>
-		            <node label="姤"/>
-		            <node label="乾"/>
-		            <node label="姤"/>
-		            <node label="雷"/>
-		        </node>
-		        <node label="乾宫">
-		            <node label="乾"/>
-		            <node label="姤"/>
-		            <node label="雷"/>
-		            <node label="乾"/>
-		            <node label="姤"/>
-		            <node label="乾"/>
-		            <node label="姤"/>
-		            <node label="雷"/>
-		        </node>
-		        <node label="坤宫">
-		            <node label="乾"/>
-		            <node label="姤"/>
-		            <node label="雷"/>
-		            <node label="乾"/>
-		            <node label="姤"/>
-		            <node label="乾"/>
-		            <node label="姤"/>
-		            <node label="雷"/>
-		        </node>
-			</node>
-	    </mx:XMLList>
-	    
-        <mx:VBox backgroundColor="#000000" backgroundAlpha="0.6" label="Cast I Ching" width="100%" height="100%">
-    	 	<mx:Button label="List people" click="listPeople()"/>
-    	 	<mx:LinkBar color="#0000FF" fontWeight="bold" dataProvider="{myViewStack}"/>    
-	        <mx:ViewStack id="myViewStack" borderStyle="none" width="100%" height="100%">
-	            <mx:Canvas id="search" backgroundAlpha="0" label="Search" width="20%" height="60%" color="#ffffff">
-                	 <mx:Tree id="myTree" width="20%" height="100%" labelField="@label" showRoot="false" dataProvider="{treeData}" fontSize="12"/>
-	            </mx:Canvas>
-	            <mx:Canvas id="custInfo" backgroundColor="#CCFFFF" label="Customer Info" width="100%" height="100%">
-	                <mx:Label text="Customer Info" color="#000000"/>
-	            </mx:Canvas>           
-	        </mx:ViewStack>                
-        </mx:VBox>
 
-         
+	</mx:Style>		   
+
+	<mx:VBox backgroundColor="#000000" backgroundAlpha="0.6" label="Cast I Ching" width="100%" height="100%">
+		<mx:LinkBar color="#0000FF" fontWeight="bold" dataProvider="{myViewStack}"/>		
+		<mx:ViewStack id="myViewStack" borderStyle="none" width="100%" height="100%">		
+			<mx:HBox id="castIChing" backgroundAlpha="0" label="Cast IChing" width="100%" height="60%" color="#ffffff">
+				 <mx:Tree id="iChingMenu" width="20%" height="100%" labelField="title" showRoot="false" dataProvider="{posts}" fontSize="12"/>
+				 <mx:VBox id="iChingContent" width="80%" height="100%" backgroundColor="#000000">
+					
+				 </mx:VBox>
+			</mx:HBox>			
+			<mx:Canvas id="IChingReferences" backgroundColor="#000000" label="IChing References" width="100%" height="100%">
+				<mx:Label text="Customer Info" color="#000000"/>
+			</mx:Canvas>			
+		</mx:ViewStack>		
+	</mx:VBox>
+        
 </mx:Application>

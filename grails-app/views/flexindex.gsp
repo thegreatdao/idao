@@ -100,14 +100,11 @@ if ( hasProductInstall && !hasRequestedVersion ) {
 </script>
 <noscript>
   	<object classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000"
-			id="mainapp"
-			width="100%"
-			height="100%"
+			id="mainapp" width="100%" height="100%"
 			codebase="http://fpdownload.macromedia.com/get/flashplayer/current/swflash.cab">
 			<param name="movie" value="i.swf" />
 			<param name="quality" value="high" />
 			<param name="bgcolor" value="white" />
-			<param name="wmode" value="transparent"/> 
 			<param name="allowScriptAccess" value="sameDomain" />
 			<embed src="i.swf" quality="high" bgcolor="white"
 				width="100%" height="100%" name="mainapp" align="middle"
