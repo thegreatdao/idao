@@ -1,33 +1,57 @@
 <?xml version="1.0" encoding="UTF-8"?>
+
+<!--
+  GRANITE DATA SERVICES
+  Copyright (C) 2009 ADEQUATE SYSTEMS SARL
+
+  This file is part of Granite Data Services.
+
+  Granite Data Services is free software; you can redistribute it and/or modify
+  it under the terms of the GNU Lesser General Public License as published by
+  the Free Software Foundation; either version 3 of the License, or (at your
+  option) any later version.
+
+  Granite Data Services is distributed in the hope that it will be useful, but
+  WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or
+  FITNESS FOR A PARTICULAR PURPOSE. See the GNU Lesser General Public License
+  for more details.
+
+  You should have received a copy of the GNU Lesser General Public License
+  along with this library; if not, see <http://www.gnu.org/licenses/>.
+-->
+
 <services-config>
 
     <services>
-        <service id="grails-remoting-service" class="flex.messaging.services.RemotingService">
-            <adapters>
-                <adapter-definition id="java-object" class="flex.messaging.services.remoting.adapters.JavaAdapter" default="true"/>
-            </adapters>
+        <service id="granite-service"
+            class="flex.messaging.services.RemotingService"
+            messageTypes="flex.messaging.messages.RemotingMessage">
+			
+            <destination id="spring">
+                <channels>
+                    <channel ref="my-graniteamf"/>
+                </channels>
+                <properties>
+                    <factory>tideSpringFactory</factory>
+                    <persistence-manager-bean-name>tidePersistenceManager</persistence-manager-bean-name>
+                </properties>
+            </destination>
         </service>
-
-        <!-- 
-        Grails bootstrap service. This service registers the SpringFactory and 
-        creates destinations for the annotated Grails services.
-        -->
-        <service id="grails-service" class="org.codehaus.groovy.grails.plugins.flex.GrailsBootstrapService"></service>
-
-        <!-- 
-        Application level default channels. Application level default channels are 
-        necessary when a dynamic destination is being used by a service component
-        and no ChannelSet has been defined for the service component. In that case,
-        application level default channels will be used to contact the destination.
-        -->   
-        <default-channels>
-           <channel ref="grails-amf"/>
-        </default-channels>
     </services>
 
+    <factories>
+        <factory id="tideSpringFactory" class="org.granite.tide.spring.SpringServiceFactory">
+        </factory>
+    </factories>
+
+    <!--
+     ! Declares my-graniteamf channel.
+     !-->
     <channels>
-        <channel-definition id="grails-amf" class="mx.messaging.channels.AMFChannel">
-            <endpoint url="http://{server.name}:{server.port}/{context.root}/messagebroker/amf" class="flex.messaging.endpoints.AMFEndpoint"/>
+        <channel-definition id="my-graniteamf" class="mx.messaging.channels.AMFChannel">
+            <endpoint
+                uri="http://{server.name}:{server.port}/{context.root}/graniteamf/amf"
+                class="flex.messaging.endpoints.AMFEndpoint"/>
         </channel-definition>
     </channels>
 

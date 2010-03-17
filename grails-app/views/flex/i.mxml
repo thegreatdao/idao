@@ -56,18 +56,23 @@ import mx.controls.treeClasses.TreeItemRenderer;
 
   import mx.events.ListEvent;
 
-			[In]
-			public var postController:Object;
-			
-			[Bindable]
-			[In]
-		    public var post:ArrayCollection;
-			
-		    private function init():void
-		    {
-		    	postController.flexPosts();
-		    	Alert.show(post.length.toString());
-		    }                                                                                                                                                  
+	import org.granite.tide.spring.Context;
+    import org.granite.tide.events.TideResultEvent;
+	import com.i.Post;
+	private var dummyPost:Post;
+	private var tideContext:Context = Spring.getInstance().getSpringContext();
+	 [Bindable] public var people:ArrayCollection = new ArrayCollection();
+	private function listPeople():void { tideContext.postService.list(listResult); Alert.show(people.length.toString());}
+
+	private function listResult(event:TideResultEvent):void
+	{ 
+		people = event.result as ArrayCollection;
+	}
+    private function init():void
+    {    	
+    	//listPeople();
+    	//Alert.show(people.length.toString());
+    }                                                                                                                                                  
    		]]>
 	</mx:Script>
 	
@@ -167,6 +172,7 @@ import mx.controls.treeClasses.TreeItemRenderer;
 	    </mx:XMLList>
 	    
         <mx:VBox backgroundColor="#000000" backgroundAlpha="0.6" label="Cast I Ching" width="100%" height="100%">
+    	 	<mx:Button label="List people" click="listPeople()"/>
     	 	<mx:LinkBar color="#0000FF" fontWeight="bold" dataProvider="{myViewStack}"/>    
 	        <mx:ViewStack id="myViewStack" borderStyle="none" width="100%" height="100%">
 	            <mx:Canvas id="search" backgroundAlpha="0" label="Search" width="20%" height="60%" color="#ffffff">

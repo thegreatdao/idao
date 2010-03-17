@@ -1,11 +1,12 @@
 package com.i
-
+import org.granite.tide.annotations.TideEnabled
 class PostException extends RuntimeException
 {
 	String message
 	Post post
 }
 
+@TideEnabled
 class PostService 
 {
 
@@ -32,6 +33,6 @@ class PostService
 
     def list()
     {
-      Post.list();
+      return Post.list();
     }
 }
