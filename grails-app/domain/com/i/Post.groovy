@@ -22,8 +22,9 @@ class Post implements Commentable, Rateable
 	static mapping = 
 	{
 		//sort dateCreated:"asc"
+		category lazy:false;
 	}
-	
+
 	static constraints = 
 	{
 		title(maxSize:100, blank: false, nullable: false)

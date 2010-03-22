@@ -5,10 +5,14 @@
  * your custom code here.
  */
 
-package com.i {
-
+package com.i 
+{
+	import mx.collections.ArrayCollection;
+	
     [Bindable]
     [RemoteClass(alias="com.i.Post")]
-    public class Post extends PostBase {
+    public class Post extends PostBase
+    {
+
     }
 }

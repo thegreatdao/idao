@@ -32,7 +32,7 @@
     </head>
     <body>
 		<div class="grid_9" id="main_form_content">
-					<div style="height:560px; width:680px; padding-left:10px; padding-right:10px;">
+					<div style="height:660px; width:680px; padding-left:10px; padding-right:10px;">
 					<script language="JavaScript" type="text/javascript">
 					<!--
 					// Version check for the Flash Player that has the ability to start Player Product Install (6.0r65)

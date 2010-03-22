@@ -33,6 +33,7 @@ class PostService
 
     def list()
     {
-      return Post.list();
+      Post.list();
     }
+	
 }
