@@ -42,12 +42,11 @@
 			private function preInit():void
 			{    	
 				Spring.getInstance().initApplication();
-				listPosts();
 			}
 			
-			private function listPosts():void 
+			private function listPosts(categoryOid:Number):void 
 			{
-				tideContext.postService.list(listResult);
+				tideContext.postService.list(categoryOid,listResult);
 			}
 
 			private function listResult(event:TideResultEvent):void
@@ -66,7 +65,20 @@
 	<mx:Style>
 
 	</mx:Style>		   
-
+	
+	<mx:Model id="bagong">
+		<bagong>
+			<gong label="乾宫"/>
+			<gong label="兑宫"/>
+			<gong label="离宫"/>
+			<gong label="震宫"/>
+			<gong label="巽宫"/>
+			<gong label="坎宫"/>
+			<gong label="艮宫"/>
+			<gong label="坤宫"/>
+		</bagong>
+	</mx:Model>
+	
 	<mx:WipeDown id="wipeDown" duration="2000"/>
 	<mx:WipeUp id="wipeUp" duration="300"/>
     <mx:WipeDown id="canvasWipeDown" duration="300"/>
@@ -80,7 +92,14 @@
 					<mx:ConstraintColumn id="navCol"/>
 					<mx:ConstraintColumn id="postContentCol"/>
 				</mx:constraintColumns>
-				<mx:Tree left="navCol:0" itemClick="showPost()" width="200" height="80%" id="iChingMenu" labelField="title" showRoot="false" dataProvider="{posts}" fontSize="12"/>
+				<mx:List 
+					id="iChingMenu"
+					left="navCol:0"
+					width="100"
+					height="200"
+					dataProvider="{bagong.gong}"
+					fontSize="12"
+					change="listPosts(1);"/>
 				<mx:Canvas left="postContentCol:0"
 					width="460"
 					height="100%" 
@@ -92,6 +111,17 @@
 						<mx:source></mx:source>
 					</mx:Image>
 					<mx:Text id="postBody" color="#ffffff" htmlText="{post.body}" width="430" paddingLeft="10" paddingTop="10" paddingBottom="10" paddingRight="10" fontSize="12"/>
+					<mx:HorizontalList 
+						id="horizontalList"
+						labelField="label"
+						iconField="thumbnailImage"
+						dataProvider="{posts}"
+						itemRenderer="com.i.component.PostListRenderer"
+						columnCount="4"
+						columnWidth="125"
+						rowCount="1"
+						rowHeight="100"
+						horizontalScrollPolicy="on" />
 				 </mx:Canvas>
 			</mx:Canvas>			
 			<mx:Canvas

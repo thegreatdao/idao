@@ -31,9 +31,10 @@ class PostService
 		throw new PostException(message: "Invalid User Id")
 	}
 
-    def list()
+    def list(long categoryId)
     {
-      Post.list();
+	  def category = Category.get(categoryId)
+      Post.list([category:category]);
     }
 	
 }
