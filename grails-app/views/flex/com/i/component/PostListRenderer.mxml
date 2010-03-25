@@ -6,5 +6,6 @@
         verticalAlign="middle">
  
     <mx:Label text="{data.title}" />
+	<mx:Image source="{data.imageURL}" />
  
 </mx:VBox>

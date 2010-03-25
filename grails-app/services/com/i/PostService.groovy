@@ -34,7 +34,7 @@ class PostService
     def list(long categoryId)
     {
 	  def category = Category.get(categoryId)
-      Post.list([category:category]);
+      Post.findAllByCategory(category)
     }
 	
 }

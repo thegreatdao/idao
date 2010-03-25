@@ -47,6 +47,10 @@
 			private function listResult(event:TideResultEvent):void
 			{ 
 				posts = event.result as ArrayCollection;
+				for each(var post:Post in posts)
+				{
+					post.imageURL = 'asset/view/' + post.imageURL + '?post=&imageId=' + post.id;
+				}
 			}
 			
 			private function showPost():void
@@ -119,7 +123,7 @@
 						iconField="thumbnailImage"
 						dataProvider="{posts}"
 						itemRenderer="com.i.component.PostListRenderer"
-						columnCount="4"
+						columnCount="3"
 						columnWidth="125"
 						rowCount="1"
 						rowHeight="100"
