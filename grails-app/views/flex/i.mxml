@@ -43,11 +43,6 @@
 			{    	
 				Spring.getInstance().initApplication();
 			}
-			
-			private function listPosts(categoryOid:Number):void 
-			{
-				tideContext.postService.list(categoryOid,listResult);
-			}
 
 			private function listResult(event:TideResultEvent):void
 			{ 
@@ -59,6 +54,13 @@
 				post = iChingMenu.selectedItem as Post;
 				wipeDown.play([postBody]);
 			}
+			
+			private function showPostsByCategory(event:mx.events.ListEvent):void
+			{
+				var category:Number = Number(List(event.target).selectedItem.category);
+				tideContext.postService.list(category,listResult);
+			}
+			
 		]]>
 	</mx:Script>
 			
@@ -68,14 +70,14 @@
 	
 	<mx:Model id="bagong">
 		<bagong>
-			<gong label="乾宫"/>
-			<gong label="兑宫"/>
-			<gong label="离宫"/>
-			<gong label="震宫"/>
-			<gong label="巽宫"/>
-			<gong label="坎宫"/>
-			<gong label="艮宫"/>
-			<gong label="坤宫"/>
+			<gong label="乾宫" category="1"/>
+			<gong label="兑宫" category="2"/>
+			<gong label="离宫" category="3"/>
+			<gong label="震宫" category="4"/>
+			<gong label="巽宫" category="5"/>
+			<gong label="坎宫" category="6"/>
+			<gong label="艮宫" category="7"/>
+			<gong label="坤宫" category="8"/>
 		</bagong>
 	</mx:Model>
 	
@@ -99,7 +101,7 @@
 					height="200"
 					dataProvider="{bagong.gong}"
 					fontSize="12"
-					change="listPosts(1);"/>
+					change="showPostsByCategory(event);"/>
 				<mx:Canvas left="postContentCol:0"
 					width="460"
 					height="100%" 

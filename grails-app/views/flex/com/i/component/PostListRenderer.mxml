@@ -5,6 +5,6 @@
         horizontalAlign="center"
         verticalAlign="middle">
  
-    <mx:Label text="6" />
+    <mx:Label text="{data.title}" />
  
 </mx:VBox>
