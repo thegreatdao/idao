@@ -4,8 +4,5 @@
         xmlns:mx="http://www.adobe.com/2006/mxml"
         horizontalAlign="center"
         verticalAlign="middle">
- 
-    <mx:Label text="{data.title}" />
-	<mx:Image source="{data.imageURL}" />
- 
+	<mx:Image width="70" height="70" source="{data.imageURL}" />
 </mx:VBox>

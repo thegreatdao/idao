@@ -20,6 +20,7 @@
     
 	<mx:Script>
    		<![CDATA[
+   			import mx.events.ItemClickEvent;
    			import com.i.PostBase;
    			import mx.binding.utils.BindingUtils;
    			import mx.collections.XMLListCollection;
@@ -37,7 +38,9 @@
 			private var post:PostBase = new PostBase();
 			private var tideContext:Context = Spring.getInstance().getSpringContext();
 			[Bindable]
-			public var posts:ArrayCollection = new ArrayCollection();
+			public var posts:ArrayCollection;
+			[Bindable]
+			private var body:String;
 			
 			private function preInit():void
 			{    	
@@ -49,28 +52,29 @@
 				posts = event.result as ArrayCollection;
 				for each(var post:Post in posts)
 				{
-					post.imageURL = 'asset/view/' + post.imageURL + '?post=&imageId=' + post.id;
+					if(post.imageURL.indexOf('asset') == -1)
+					{
+						post.imageURL = 'asset/view/' + post.imageURL + '?post=&imageId=' + post.id;
+					}
 				}
+				body = '';
 			}
-			
+						
 			private function showPost():void
 			{
-				post = iChingMenu.selectedItem as Post;
+				post = horizontalList.selectedItem as Post;
+				body = '<img src="' + post.imageURL + '">' + post.body;
 				wipeDown.play([postBody]);
 			}
-			
-			private function showPostsByCategory(event:mx.events.ListEvent):void
+
+			private function showPostsByCategory(event:mx.events.ItemClickEvent):void
 			{
-				var category:Number = Number(List(event.target).selectedItem.category);
+				var category:Number = Number(event.item.category);
 				tideContext.postService.list(category,listResult);
 			}
 			
 		]]>
-	</mx:Script>
-			
-	<mx:Style>
-
-	</mx:Style>		   
+	</mx:Script>		  
 	
 	<mx:Model id="bagong">
 		<bagong>
@@ -91,49 +95,68 @@
 
 	<mx:VBox backgroundColor="#000000" backgroundAlpha="0.6" label="Cast I Ching" width="100%" height="100%" 
 		borderStyle="solid" cornerRadius="6" borderThickness="0">
-		<mx:LinkBar color="#0000FF" fontWeight="bold" dataProvider="{myViewStack}"/>		
+		<mx:LinkBar color="#0000FF" fontWeight="bold" dataProvider="{myViewStack}"/>
+
 		<mx:ViewStack id="myViewStack" borderStyle="none" width="100%" height="100%">		
-			<mx:Canvas id="castIChing" backgroundAlpha="0" label="Cast IChing" color="#ffffff" width="100%" height="100%">
+			<mx:Canvas id="iChingReferences" backgroundAlpha="0" label="IChing References" color="#ffffff" width="100%" height="100%">
 				<mx:constraintColumns>
 					<mx:ConstraintColumn id="navCol"/>
 					<mx:ConstraintColumn id="postContentCol"/>
 				</mx:constraintColumns>
+				<!--
 				<mx:List 
 					id="iChingMenu"
-					left="navCol:0"
+					left="navCol:10"
 					width="100"
 					height="200"
 					dataProvider="{bagong.gong}"
 					fontSize="12"
 					change="showPostsByCategory(event);"/>
-				<mx:Canvas left="postContentCol:0"
-					width="460"
+				-->
+				<mx:VBox
+					width="100%"
 					height="100%" 
 					id="iChingContent" 
 					backgroundAlpha="0"
 					showEffect="{wipeUp}"
 					hideEffect="{canvasWipeDown}">
-					<mx:Image>
-						<mx:source></mx:source>
-					</mx:Image>
-					<mx:Text id="postBody" color="#ffffff" htmlText="{post.body}" width="430" paddingLeft="10" paddingTop="10" paddingBottom="10" paddingRight="10" fontSize="12"/>
-					<mx:HorizontalList 
-						id="horizontalList"
-						labelField="label"
-						iconField="thumbnailImage"
-						dataProvider="{posts}"
-						itemRenderer="com.i.component.PostListRenderer"
-						columnCount="3"
-						columnWidth="125"
-						rowCount="1"
-						rowHeight="100"
-						horizontalScrollPolicy="on" />
-				 </mx:Canvas>
+					<mx:VBox horizontalAlign="center" width="100%" height="100%">
+						<mx:ButtonBar dataProvider="{bagong.gong}" itemClick="showPostsByCategory(event);"/>
+						<mx:HorizontalList
+							id="horizontalList"
+							labelField="label"
+							iconField="thumbnailImage"
+							dataProvider="{posts}"
+							itemRenderer="com.i.component.PostListRenderer"
+							columnCount="8"
+							columnWidth="80"
+							rowCount="1"
+							rowHeight="80"
+							change="showPost();"
+						 	backgroundColor="#000000"
+						 	backgroundAlpha="0.2"
+						 	borderColor="#383737"
+						 	/>
+						<mx:VBox height="500" width="98%">
+							<mx:Text 
+								id="postBody" 
+								color="#ffffff" 
+								htmlText="{body}" 
+								width="100%" 
+								paddingLeft="10" 
+								paddingTop="10" 
+								paddingBottom="10" 
+								paddingRight="10" 
+								fontSize="12"/>
+						</mx:VBox>
+					</mx:VBox>			
+						
+				 </mx:VBox>
 			</mx:Canvas>			
 			<mx:Canvas
-				id="IChingReferences"
+				id="castIChing"
 				backgroundAlpha="0"
-				label="IChing References"
+				label="Cast IChing"
 				width="100%"
 				height="100%"
 				showEffect="{wipeUp}"

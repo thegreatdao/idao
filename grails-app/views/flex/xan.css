@@ -70,8 +70,8 @@ ToggleButtonBar {
 	textRollOverColor: #000000;
 	textSelectedColor: #000000;	
     disabledSkin: Embed(source="assets/images/ButtonBar-firstButton_disabledSkin.png", scaleGridLeft="4", scaleGridTop="4", scaleGridRight="42", scaleGridBottom="18"); 
-    downSkin: Embed(source="assets/images/ButtonBar-firstButton_downSkin.png", scaleGridLeft="4", scaleGridTop="4", scaleGridRight="42", scaleGridBottom="18"); 
-    overSkin: Embed(source="assets/images/ButtonBar-firstButton_overSkin.png", scaleGridLeft="4", scaleGridTop="4", scaleGridRight="42", scaleGridBottom="18"); 
+    downSkin: Embed(source="assets/images/ButtonBar-button_upSkin.png", scaleGridLeft="4", scaleGridTop="4", scaleGridRight="42", scaleGridBottom="18"); 
+    overSkin: Embed(source="assets/images/ButtonBar-button_upSkin.png", scaleGridLeft="4", scaleGridTop="4", scaleGridRight="42", scaleGridBottom="18"); 
     selectedDisabledSkin: Embed(source="assets/images/ButtonBar-firstButton_selectedDisabledSkin.png", scaleGridLeft="4", scaleGridTop="4", scaleGridRight="42", scaleGridBottom="18"); 
     selectedDownSkin: Embed(source="assets/images/ButtonBar-firstButton_selectedUpSkin.png", scaleGridLeft="4", scaleGridTop="4", scaleGridRight="42", scaleGridBottom="18"); 
     selectedOverSkin: Embed(source="assets/images/ButtonBar-firstButton_selectedUpSkin.png", scaleGridLeft="4", scaleGridTop="4", scaleGridRight="42", scaleGridBottom="18"); 
@@ -83,8 +83,8 @@ ToggleButtonBar {
 	textRollOverColor: #000000;
 	textSelectedColor: #000000;
     disabledSkin: Embed(source="assets/images/ButtonBar-button_disabledSkin.png", scaleGridLeft="2", scaleGridTop="4", scaleGridRight="42", scaleGridBottom="18"); 
-    downSkin: Embed(source="assets/images/ButtonBar-button_downSkin.png", scaleGridLeft="2", scaleGridTop="4", scaleGridRight="42", scaleGridBottom="18"); 
-    overSkin: Embed(source="assets/images/ButtonBar-button_overSkin.png", scaleGridLeft="2", scaleGridTop="4", scaleGridRight="42", scaleGridBottom="18"); 
+    downSkin: Embed(source="assets/images/ButtonBar-button_upSkin.png", scaleGridLeft="2", scaleGridTop="4", scaleGridRight="42", scaleGridBottom="18"); 
+    overSkin: Embed(source="assets/images/ButtonBar-button_upSkin.png", scaleGridLeft="2", scaleGridTop="4", scaleGridRight="42", scaleGridBottom="18"); 
     selectedDisabledSkin: Embed(source="assets/images/ButtonBar-button_selectedDisabledSkin.png", scaleGridLeft="2", scaleGridTop="4", scaleGridRight="42", scaleGridBottom="18"); 
     selectedDownSkin: Embed(source="assets/images/ButtonBar-button_selectedUpSkin.png", scaleGridLeft="2", scaleGridTop="4", scaleGridRight="42", scaleGridBottom="18"); 
     selectedOverSkin: Embed(source="assets/images/ButtonBar-button_selectedUpSkin.png", scaleGridLeft="2", scaleGridTop="4", scaleGridRight="42", scaleGridBottom="18"); 
@@ -96,8 +96,8 @@ ToggleButtonBar {
 	textRollOverColor: #000000;
 	textSelectedColor: #000000;	
     disabledSkin: Embed(source="assets/images/ButtonBar-lastButton_disabledSkin.png", scaleGridLeft="2", scaleGridTop="4", scaleGridRight="38", scaleGridBottom="18"); 
-    downSkin: Embed(source="assets/images/ButtonBar-lastButton_downSkin.png", scaleGridLeft="2", scaleGridTop="4", scaleGridRight="38", scaleGridBottom="18"); 
-    overSkin: Embed(source="assets/images/ButtonBar-lastButton_overSkin.png", scaleGridLeft="2", scaleGridTop="4", scaleGridRight="38", scaleGridBottom="18"); 
+    downSkin: Embed(source="assets/images/ButtonBar-button_upSkin.png", scaleGridLeft="2", scaleGridTop="4", scaleGridRight="38", scaleGridBottom="18"); 
+    overSkin: Embed(source="assets/images/ButtonBar-button_upSkin.png", scaleGridLeft="2", scaleGridTop="4", scaleGridRight="38", scaleGridBottom="18"); 
     selectedDisabledSkin: Embed(source="assets/images/ButtonBar-lastButton_selectedDisabledSkin.png", scaleGridLeft="2", scaleGridTop="4", scaleGridRight="38", scaleGridBottom="18"); 
     selectedDownSkin: Embed(source="assets/images/ButtonBar-lastButton_selectedUpSkin.png", scaleGridLeft="2", scaleGridTop="4", scaleGridRight="38", scaleGridBottom="18"); 
     selectedOverSkin: Embed(source="assets/images/ButtonBar-lastButton_selectedUpSkin.png", scaleGridLeft="2", scaleGridTop="4", scaleGridRight="38", scaleGridBottom="18"); 
@@ -319,6 +319,27 @@ ProgressBar {
 RadioButton {
 	color: #333333;
 }
+HScrollBar {
+   cornerRadius: 0;
+   highlightAlphas: 0, 0;
+   fillAlphas: 0.9, 0.61, 0.75, 0.65;
+   fillColors: #333333, #000000, #666666, #333333;
+   trackColors: #333333, #666666;
+   themeColor: #333333;
+   borderColor: #333333;
+   thumbOffset: 1;
+}
+
+VScrollBar {
+   cornerRadius: 0;
+   highlightAlphas: 0, 0;
+   fillAlphas: 0.9, 0.61, 0.75, 0.65;
+   fillColors: #333333, #000000, #666666, #333333;
+   trackColors: #333333, #666666;
+   themeColor: #333333;
+   borderColor: #333333;
+}
+/*
 ScrollBar {
 	downArrowDownSkin: Embed(source="assets/images/VScrollbar_downArrowDownSkin.png");
 	downArrowOverSkin: Embed(source="assets/images/VScrollbar_downArrowOverSkin.png");
@@ -332,6 +353,7 @@ ScrollBar {
 	upArrowOverSkin: Embed(source="assets/images/VScrollbar_upArrowOverSkin.png");
 	upArrowUpSkin: Embed(source="assets/images/VScrollbar_upArrowUpSkin.png");
 }
+*/
 Slider, HSlider, VSlider {
 	thumbDisabledSkin: Embed(source="assets/images/Slider_thumbDisabledSkin.png");
 	thumbDownSkin: Embed(source="assets/images/Slider_thumbDownSkin.png");
