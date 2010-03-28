@@ -58,7 +58,8 @@ Button {
 ButtonBar { 
 	buttonStyleName: "buttonBarButton"; 
 	firstButtonStyleName: "firstButtonBarButton"; 
-	lastButtonStyleName: "lastButtonBarButton"; 
+	lastButtonStyleName: "lastButtonBarButton";
+	font-size: "12";
 }
 ToggleButtonBar { 
 	buttonStyleName: "buttonBarButton"; 
@@ -67,42 +68,42 @@ ToggleButtonBar {
 }
 .firstButtonBarButton { 
 	color: #ffffff;
-	textRollOverColor: #000000;
-	textSelectedColor: #000000;	
-    disabledSkin: Embed(source="assets/images/ButtonBar-firstButton_disabledSkin.png", scaleGridLeft="4", scaleGridTop="4", scaleGridRight="42", scaleGridBottom="18"); 
-    downSkin: Embed(source="assets/images/ButtonBar-button_upSkin.png", scaleGridLeft="4", scaleGridTop="4", scaleGridRight="42", scaleGridBottom="18"); 
-    overSkin: Embed(source="assets/images/ButtonBar-button_upSkin.png", scaleGridLeft="4", scaleGridTop="4", scaleGridRight="42", scaleGridBottom="18"); 
+	textRollOverColor: #FEB729;
+	textSelectedColor: #FEB729;	
+    disabledSkin: Embed(source="assets/images/ButtonBar-button_First_Skin.png", scaleGridLeft="4", scaleGridTop="4", scaleGridRight="42", scaleGridBottom="18"); 
+    downSkin: Embed(source="assets/images/ButtonBar-button_First_Skin.png", scaleGridLeft="4", scaleGridTop="4", scaleGridRight="42", scaleGridBottom="18"); 
+    overSkin: Embed(source="assets/images/ButtonBar-button_First_Skin.png", scaleGridLeft="4", scaleGridTop="4", scaleGridRight="42", scaleGridBottom="18"); 
     selectedDisabledSkin: Embed(source="assets/images/ButtonBar-firstButton_selectedDisabledSkin.png", scaleGridLeft="4", scaleGridTop="4", scaleGridRight="42", scaleGridBottom="18"); 
-    selectedDownSkin: Embed(source="assets/images/ButtonBar-firstButton_selectedUpSkin.png", scaleGridLeft="4", scaleGridTop="4", scaleGridRight="42", scaleGridBottom="18"); 
-    selectedOverSkin: Embed(source="assets/images/ButtonBar-firstButton_selectedUpSkin.png", scaleGridLeft="4", scaleGridTop="4", scaleGridRight="42", scaleGridBottom="18"); 
-    selectedUpSkin: Embed(source="assets/images/ButtonBar-firstButton_selectedUpSkin.png", scaleGridLeft="4", scaleGridTop="4", scaleGridRight="42", scaleGridBottom="18"); 
-    upSkin: Embed(source="assets/images/ButtonBar-firstButton_upSkin.png", scaleGridLeft="4", scaleGridTop="4", scaleGridRight="42", scaleGridBottom="18"); 
+    selectedDownSkin: Embed(source="assets/images/ButtonBar-button_First_Skin.png", scaleGridLeft="4", scaleGridTop="4", scaleGridRight="42", scaleGridBottom="18"); 
+    selectedOverSkin: Embed(source="assets/images/ButtonBar-button_First_Skin.png", scaleGridLeft="4", scaleGridTop="4", scaleGridRight="42", scaleGridBottom="18"); 
+    selectedUpSkin: Embed(source="assets/images/ButtonBar-button_First_Skin.png", scaleGridLeft="4", scaleGridTop="4", scaleGridRight="42", scaleGridBottom="18"); 
+    upSkin: Embed(source="assets/images/ButtonBar-button_First_Skin.png", scaleGridLeft="4", scaleGridTop="4", scaleGridRight="42", scaleGridBottom="18"); 
 }
 .buttonBarButton { 
 	color: #ffffff;
-	textRollOverColor: #000000;
-	textSelectedColor: #000000;
-    disabledSkin: Embed(source="assets/images/ButtonBar-button_disabledSkin.png", scaleGridLeft="2", scaleGridTop="4", scaleGridRight="42", scaleGridBottom="18"); 
+	textRollOverColor: #FEB729;
+	textSelectedColor: #FEB729;
+    disabledSkin: Embed(source="assets/images/ButtonBar-button_upSkin.png", scaleGridLeft="2", scaleGridTop="4", scaleGridRight="42", scaleGridBottom="18"); 
     downSkin: Embed(source="assets/images/ButtonBar-button_upSkin.png", scaleGridLeft="2", scaleGridTop="4", scaleGridRight="42", scaleGridBottom="18"); 
     overSkin: Embed(source="assets/images/ButtonBar-button_upSkin.png", scaleGridLeft="2", scaleGridTop="4", scaleGridRight="42", scaleGridBottom="18"); 
     selectedDisabledSkin: Embed(source="assets/images/ButtonBar-button_selectedDisabledSkin.png", scaleGridLeft="2", scaleGridTop="4", scaleGridRight="42", scaleGridBottom="18"); 
-    selectedDownSkin: Embed(source="assets/images/ButtonBar-button_selectedUpSkin.png", scaleGridLeft="2", scaleGridTop="4", scaleGridRight="42", scaleGridBottom="18"); 
-    selectedOverSkin: Embed(source="assets/images/ButtonBar-button_selectedUpSkin.png", scaleGridLeft="2", scaleGridTop="4", scaleGridRight="42", scaleGridBottom="18"); 
-    selectedUpSkin: Embed(source="assets/images/ButtonBar-button_selectedUpSkin.png", scaleGridLeft="2", scaleGridTop="4", scaleGridRight="42", scaleGridBottom="18"); 
+    selectedDownSkin: Embed(source="assets/images/ButtonBar-button_upSkin.png", scaleGridLeft="2", scaleGridTop="4", scaleGridRight="42", scaleGridBottom="18"); 
+    selectedOverSkin: Embed(source="assets/images/ButtonBar-button_upSkin.png", scaleGridLeft="2", scaleGridTop="4", scaleGridRight="42", scaleGridBottom="18"); 
+    selectedUpSkin: Embed(source="assets/images/ButtonBar-button_upSkin.png", scaleGridLeft="2", scaleGridTop="4", scaleGridRight="42", scaleGridBottom="18"); 
     upSkin: Embed(source="assets/images/ButtonBar-button_upSkin.png", scaleGridLeft="2", scaleGridTop="4", scaleGridRight="42", scaleGridBottom="18"); 
 }
 .lastButtonBarButton { 
 	color: #ffffff;
-	textRollOverColor: #000000;
-	textSelectedColor: #000000;	
+	textRollOverColor: #FEB729;
+	textSelectedColor: #FEB729;	
     disabledSkin: Embed(source="assets/images/ButtonBar-lastButton_disabledSkin.png", scaleGridLeft="2", scaleGridTop="4", scaleGridRight="38", scaleGridBottom="18"); 
-    downSkin: Embed(source="assets/images/ButtonBar-button_upSkin.png", scaleGridLeft="2", scaleGridTop="4", scaleGridRight="38", scaleGridBottom="18"); 
-    overSkin: Embed(source="assets/images/ButtonBar-button_upSkin.png", scaleGridLeft="2", scaleGridTop="4", scaleGridRight="38", scaleGridBottom="18"); 
-    selectedDisabledSkin: Embed(source="assets/images/ButtonBar-lastButton_selectedDisabledSkin.png", scaleGridLeft="2", scaleGridTop="4", scaleGridRight="38", scaleGridBottom="18"); 
-    selectedDownSkin: Embed(source="assets/images/ButtonBar-lastButton_selectedUpSkin.png", scaleGridLeft="2", scaleGridTop="4", scaleGridRight="38", scaleGridBottom="18"); 
-    selectedOverSkin: Embed(source="assets/images/ButtonBar-lastButton_selectedUpSkin.png", scaleGridLeft="2", scaleGridTop="4", scaleGridRight="38", scaleGridBottom="18"); 
-    selectedUpSkin: Embed(source="assets/images/ButtonBar-lastButton_selectedUpSkin.png", scaleGridLeft="2", scaleGridTop="4", scaleGridRight="38", scaleGridBottom="18"); 
-    upSkin: Embed(source="assets/images/ButtonBar-lastButton_upSkin.png", scaleGridLeft="2", scaleGridTop="4", scaleGridRight="38", scaleGridBottom="18"); 
+    downSkin: Embed(source="assets/images/ButtonBar-button_LastSkin.png", scaleGridLeft="2", scaleGridTop="4", scaleGridRight="38", scaleGridBottom="18"); 
+    overSkin: Embed(source="assets/images/ButtonBar-button_LastSkin.png", scaleGridLeft="2", scaleGridTop="4", scaleGridRight="38", scaleGridBottom="18"); 
+    selectedDisabledSkin: Embed(source="assets/images/ButtonBar-button_LastSkin.png", scaleGridLeft="2", scaleGridTop="4", scaleGridRight="38", scaleGridBottom="18"); 
+    selectedDownSkin: Embed(source="assets/images/ButtonBar-button_LastSkin.png", scaleGridLeft="2", scaleGridTop="4", scaleGridRight="38", scaleGridBottom="18"); 
+    selectedOverSkin: Embed(source="assets/images/ButtonBar-button_LastSkin.png", scaleGridLeft="2", scaleGridTop="4", scaleGridRight="38", scaleGridBottom="18"); 
+    selectedUpSkin: Embed(source="assets/images/ButtonBar-button_LastSkin.png", scaleGridLeft="2", scaleGridTop="4", scaleGridRight="38", scaleGridBottom="18"); 
+    upSkin: Embed(source="assets/images/ButtonBar-button_LastSkin.png", scaleGridLeft="2", scaleGridTop="4", scaleGridRight="38", scaleGridBottom="18"); 
 }
 CheckBox {
 	color: #333333;

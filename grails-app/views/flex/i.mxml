@@ -35,16 +35,15 @@
 			import com.i.Post;
 			
 			[Bindable]
-			private var post:PostBase = new PostBase();
+			private var post:Post = new Post();
 			private var tideContext:Context = Spring.getInstance().getSpringContext();
 			[Bindable]
 			public var posts:ArrayCollection;
-			[Bindable]
-			private var body:String;
 			
 			private function preInit():void
 			{    	
 				Spring.getInstance().initApplication();
+				tideContext.postService.list(1,listResult);
 			}
 
 			private function listResult(event:TideResultEvent):void
@@ -57,18 +56,18 @@
 						post.imageURL = 'asset/view/' + post.imageURL + '?post=&imageId=' + post.id;
 					}
 				}
-				body = '';
 			}
-						
+
 			private function showPost():void
 			{
 				post = horizontalList.selectedItem as Post;
-				body = '<img src="' + post.imageURL + '">' + post.body;
 				wipeDown.play([postBody]);
+				imageEffect.play([guaImage]);
 			}
 
 			private function showPostsByCategory(event:mx.events.ItemClickEvent):void
 			{
+				post = new Post();
 				var category:Number = Number(event.item.category);
 				tideContext.postService.list(category,listResult);
 			}
@@ -92,6 +91,14 @@
 	<mx:WipeDown id="wipeDown" duration="2000"/>
 	<mx:WipeUp id="wipeUp" duration="300"/>
     <mx:WipeDown id="canvasWipeDown" duration="300"/>
+    <mx:Sequence id="imageEffect">
+	    <mx:Rotate id="rotate"
+	            angleFrom="-360"
+	            angleTo="0"
+	            duration="3000" />
+	    <mx:Move xTo="220" duration="2000"/>
+	    <mx:Move xTo="0" duration="1000"/>
+    </mx:Sequence>
 
 	<mx:VBox backgroundColor="#000000" backgroundAlpha="0.6" label="Cast I Ching" width="100%" height="100%" 
 		borderStyle="solid" cornerRadius="6" borderThickness="0">
@@ -133,15 +140,15 @@
 							rowCount="1"
 							rowHeight="80"
 							change="showPost();"
-						 	backgroundColor="#000000"
 						 	backgroundAlpha="0.2"
 						 	borderColor="#383737"
-						 	/>
-						<mx:VBox height="500" width="98%">
+						 	 alternatingItemColors="[#000000, #605E5E]"/>
+						<mx:VBox height="500" width="98%" id="postBox">
+							<mx:Image source="{post.imageURL}" id="guaImage"/>
 							<mx:Text 
 								id="postBody" 
 								color="#ffffff" 
-								htmlText="{body}" 
+								htmlText="{post.body}" 
 								width="100%" 
 								paddingLeft="10" 
 								paddingTop="10" 
