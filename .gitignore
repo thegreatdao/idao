@@ -27,3 +27,4 @@ grails-app/views/flex/com/i/*Base.as
 web-app/history/*
 .gitignore~
 web-app/WEB-INF/flex/
+grails-app/views/swf/

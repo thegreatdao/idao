@@ -3,7 +3,7 @@ dataSource {
 	//driverClassName = "org.hsqldb.jdbcDriver"
 	driverClassName = "com.mysql.jdbc.Driver"
 	username = "root"
-	password = "beyond"
+	password = "foobarz"
 }
 hibernate {
     cache.use_second_level_cache=true
