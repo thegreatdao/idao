@@ -119,6 +119,7 @@
 					dataProvider="{bagong.gong}"
 					fontSize="12"
 					change="showPostsByCategory(event);"/>
+					
 				-->
 				<mx:VBox
 					width="100%"

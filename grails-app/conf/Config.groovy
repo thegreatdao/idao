@@ -117,3 +117,6 @@ post.thumbnail.default.width=120
 post.thumbnail.default.height=120
 user.thumbnail.default.width=30
 user.thumbnail.default.height=30
+// The following properties have been added by the Upgrade process...
+grails.views.default.codec="none" // none, html, base64
+grails.views.gsp.encoding="UTF-8"
