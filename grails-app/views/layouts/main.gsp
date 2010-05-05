@@ -283,7 +283,7 @@
 					<div class="menu_item" id="menu1"><a href="<g:createLink controller="post" action="list" params="[category: 1]"/>"><g:message code="I-Ching"/></a></div>
 					<div class="menu_item" id="menu2"><a href="<g:createLink controller="post" action="list" params="[category: 2]"/>"><g:message code="Dao"/></a></div>
 					<div class="menu_item" id="menu3"><a href="<g:createLink controller="post" action="list" params="[category: 3]"/>"><g:message code="Zen-Buddhaism"/></a></div>
-					<div class="menu_item"><a href="<g:createLink controller="castIChing"/>"><g:message code="Cast-I-Ching"/></a></div>
+					<div class="menu_item"><a href="/i/castIChing"><g:message code="Cast-I-Ching"/></a></div>
 					<div class="menu_item"><a href="javascript:void(0);"><g:message code="About"/></a></div>
 					<div class="menu_item"><a href="javascript:void(0);"><g:message code="Contact"/></a></div>
 				</div>

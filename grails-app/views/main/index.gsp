@@ -13,7 +13,7 @@
 		
 		<div class="grid_4 category">
 			<img src="${resource(dir:'img',file:'cat_1.png')}"/>
-			<h5><a href="#"><g:message code="I-Ching"/></a></h5>
+			<h5><a href="<g:createLink controller="post" action="list" params="[category: 1]"/>"><g:message code="I-Ching"/></a></h5>
 			<div class="single_category">
 				<ul>
 					<g:each var="post" in="${request.iChingPosts}">
@@ -24,7 +24,7 @@
 		</div>
 		<div class="grid_4 category">
 			<img src="${resource(dir:'img',file:'cat_2.png')}"/>
-			<h5><a href="#"><g:message code="Dao"/></a></h5>
+			<h5><a href="<g:createLink controller="post" action="list" params="[category: 2]"/>"><g:message code="Dao"/></a></h5>
 			<div class="single_category">
 				<ul>
 					<g:each var="post" in="${request.daoDeJingPosts}">
@@ -35,7 +35,7 @@
 		</div>
 		<div class="grid_4 category">
 			<img src="${resource(dir:'img',file:'cat_3.png')}"/>
-			<h5><a href="#"><g:message code="Zen-Buddhaism"/></a></h5>
+			<h5><a href="<g:createLink controller="post" action="list" params="[category: 3]"/>"><g:message code="Zen-Buddhaism"/></a></h5>
 			<div class="single_category">
 				<ul>
 					<g:each var="post" in="${request.zenBuPosts}">
