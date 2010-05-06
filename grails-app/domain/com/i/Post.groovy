@@ -3,7 +3,7 @@ package com.i
 import org.grails.comments.*
 import org.grails.rateable.*
 
-class Post implements Commentable, Rateable
+class Post implements Commentable, Rateable, Taggable
 {	
 	//enable this we have to use merge instead of save on domain class a bug from searchable plugin
 	static searchable = 

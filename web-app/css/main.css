@@ -382,15 +382,25 @@ img#login_button
 	margin-top:10px;
 }
 
-.read_more a, #user_info a
+.read_more a, #user_info a, .tags a
 {
 	color:#FEB729;
 	text-decoration:none;
 }
 
-.read_more a:hover, #user_info a:hover
+.read_more a:hover, #user_info a:hover, .tags a:hover
 {
 	color:#FFFFFF;
+}
+
+.tag
+{
+	margin-right:10px;
+}
+
+.tags
+{
+	float:left;
 }
 
 .summary p
@@ -706,7 +716,7 @@ img#login_button
 	color:red;
 }
 
-.float_right_container
+.rating_container
 {
 	float:right;
 }
@@ -822,4 +832,9 @@ img#login_button
 #pagination-digg a:hover
 {
     border:solid 1px #0e509e;
+}
+
+#standalone_content
+{
+	padding:0 30px 26px;
 }
