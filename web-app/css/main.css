@@ -515,7 +515,13 @@ img#login_button
 	padding-left:30px;
 }
 
-.mainForm input, .mainForm textarea, .comment textarea, .comment input, .mainForm select
+.tag_form
+{
+	margin-top:10px;
+	display:none;
+}
+
+.mainForm input, .mainForm textarea, .comment textarea, .comment input, .mainForm select, .tag_form input
 {
 	background-color:transparent !important;
 	border:1px solid white;
@@ -527,6 +533,11 @@ img#login_button
 	margin-bottom:20px;
 }
 
+.tag_form input
+{
+	padding-left:3px;
+	color:#FEB729;
+}
 .mainForm select
 {
 	min-width:200px;

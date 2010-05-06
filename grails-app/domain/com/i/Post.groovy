@@ -2,6 +2,7 @@ package com.i
 
 import org.grails.comments.*
 import org.grails.rateable.*
+import org.grails.taggable.*
 
 class Post implements Commentable, Rateable, Taggable
 {	
