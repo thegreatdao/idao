@@ -515,6 +515,13 @@ img#login_button
 	padding-left:30px;
 }
 
+.tag_img
+{
+	float:left;
+	margin-right:10px;
+	cursor:pointer;
+}
+
 .tag_form
 {
 	margin-top:10px;
@@ -533,11 +540,12 @@ img#login_button
 	margin-bottom:20px;
 }
 
-.tag_form input
+.tag_form input[type=text]
 {
 	padding-left:3px;
 	color:#FEB729;
 }
+
 .mainForm select
 {
 	min-width:200px;
