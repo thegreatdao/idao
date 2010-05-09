@@ -40,19 +40,11 @@ class RendererTagLib
     out << render (template:'/post/rating', model:[postInstance : postInstance])
   }
 
-  /*
-  def renderItems =
-  {
-    attrs, body ->
-    def items = attrs.items
-    out << render (template:'/common/emptybody', model : [items : items])
-  }
-  
-  def renderPostItems =
+  def renderTags =
   {
 	attrs, body ->
-	def postInstances = attrs.postInstances
-	out << render (template:'/common/emptybody', model : [postInstances : postInstances])
+	def tags = attrs.tags
+	def postInstanceId = attrs.postInstanceId
+	out << render (template:'/taggable/tags', model:[tags : tags, postInstanceId : postInstanceId])
   }
-  */
 }

@@ -8,28 +8,8 @@
     </form>
 </div>
 <div class="float_right_container">
-	<div class="tags">
-		<script>
-			$(
-				function()
-				{
-					var imgId = ${postInstance.id};
-					$('#tag_img_${postInstance.id}').toggle(
-						function()
-						{							
-							$('#tag_form_${postInstance.id}').show();
-						},
-						function()
-						{							
-							$('#tag_form_${postInstance.id}').hide();
-						}
-					);
-					$('#tag_submit_' + imgId).click(function(){$('#comment_loader_rating_' + imgId).show();});
-				}
-			)
-		</script>
-		<img id="tag_img_${postInstance.id}" src="${resource(dir:'img',file:'tag.png')}" class="tag_img"/>
-		<a href="#" class="tag">Buddha</a> <a href="#" class="tag">Sympathy</a> <a href="#" class="tag">Compasion</a> <a href="#" class="tag">Dao</a> <a href="#" class="tag">IChing</a>
+	<div class="tags" id="tags_${postInstance.id}">
+		<g:renderTags tags="${postInstance.tags}" postInstanceId="${postInstance.id}"/>
 	</div>
     <div style="float:right;">Total rating is :<span id="total_rating_${postInstance.id}" class="rating">${postInstance?.totalRatings}</span> Average is:<span id="average_rating_${postInstance.id}" class="rating">${postInstance?.averageRating}</span></div>
 	<div class="clear"></div>
