@@ -45,5 +45,5 @@
 </script>
 <img id="tag_img_${postInstanceId}" src="${resource(dir:'img',file:'tag.png')}" class="tag_img"/>	
 <g:each var="tag" in="${tags}">
-	<a href="#" class="tag">${tag}</a>
+	<a href="${request.contextPath}/post/list?tag=${tag}" class="tag">${tag}</a>
 </g:each>

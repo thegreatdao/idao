@@ -36,6 +36,10 @@ class PostController
 		}
       postInstanceList = Post.findAllByCategory(category, [params])
     }
+	else if(params.tag)
+	{
+		postInstanceList = Post.findAllByTag(params.tag)
+	}
     else
     {
       postInstanceList =  Post.list( params )

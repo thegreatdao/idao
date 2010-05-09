@@ -6,6 +6,17 @@ class RendererTagLib
   def renderRightSideBar =
   {
     attrs, body ->
+	def tags = Post.allTags
+	if(!session.tagsMap)
+	{
+		def tagsVar = new StringBuilder("")
+		tags.each
+		{
+			def count = Post.countByTag(it) + 10
+			tagsVar.append("<a href='${request.contextPath}/post/list?tag=${it}' style='${count}'>${it}</a>")
+		}		
+		session.tagsVar = tagsVar.toString()
+	}
     def postInstances = Post.list(max:8)
     out << render (template:'/common/right_side_bar', model : [postInstances:postInstances])
   }
