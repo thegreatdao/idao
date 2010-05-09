@@ -64,7 +64,7 @@ appenders {
         error 'stdout', 'hibeFile'
         additivity = true
     }
-debug 'org.hibernate.SQL'
+//debug 'org.hibernate.SQL'
 }
  
 //log4j.logger.org.springframework.security='off,stdout'

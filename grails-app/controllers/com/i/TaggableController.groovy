@@ -5,10 +5,9 @@ class TaggableController
 	def postTag = {
 		def postInstance = null
 		def tag = params['tag']
-		def postId = params['postId']
+		def postId = params.long('postId')
 		if(tag && postId)
-		{
-			postId= params['postId'] as Long			
+		{		
 			postInstance = Post.get(postId)
 			def tags = postInstance.tags
 			if(tags.size() < 5 && !tags.contains(tag))
